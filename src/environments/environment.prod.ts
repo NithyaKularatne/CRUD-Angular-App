@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8080/rest/v2'  
+  baseUrl: 'https://springboot-api-server.herokuapp.com/rest/v2'  
 
 };
