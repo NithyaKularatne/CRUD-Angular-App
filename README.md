@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Netlify Deployment
 
-This app has been deployed on netlify for you to see it in action. Navigate to [Netlify Deployment]()
+This app has been deployed on netlify for you to see it in action. Navigate to [Netlify Deployment](https://trusting-swanson-20abdf.netlify.app/)
 
 ## Development server
 
