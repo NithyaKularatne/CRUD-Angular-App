@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import { Country } from '../app.component';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddCountryService {
 
+  baseUrl = environment.baseUrl;
+
   constructor(private http:HttpClient) { }
 
   form: FormGroup = new FormGroup({
-    $id: new FormControl(null),
+    id: new FormControl(null),
     countryName: new FormControl(''),
     continent: new FormControl(''),
     president: new FormControl('')
@@ -18,7 +22,7 @@ export class AddCountryService {
 
   initializeFormGroup() {
     this.form.setValue({
-      $id: null,
+      id: null,
       countryName: '',
       continent: '',
       president: ''
@@ -26,17 +30,30 @@ export class AddCountryService {
   }
 
   public createCountry(country:JSON){
-    console.log(country)
-    return this.http.post("http://localhost:8080/addCountry", country);
 
+    let url = `${this.baseUrl}/addCountry`
+    return this.http.post(url, country);
   }
 
   public countryInfo(){
-  return this.http.get("http://localhost:8080/getCountryList");
+    let url = `${this.baseUrl}/getCountryList`
+    return this.http.get(url);
   }
 
   public deleteCountry(id:number){
-    return this.http.delete("http://localhost:8080/deleteCountryById/"+id);
-    }
+    let url = `${this.baseUrl}/deleteCountryById/${id}`
+    return this.http.delete(url);
+  }
+
+  public updateCountry(country:any){
+    let url = `${this.baseUrl}/updateCountryById/${country.id}`
+    return this.http.put(url,country);
+  }  
+
+  public populateForm(country: Country) {
+    console.log(country)
+    this.form.controls['id'].setValue(country.id)
+    this.form.patchValue(country);
+  }
 
 }

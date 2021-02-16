@@ -15,20 +15,22 @@ div.container{
   }
 
   form.normal-form{
-    margin: 10px;
+    margin: 0px;
 }
 
 .controles-container{
     width: 100%;
-    padding: 5%;    
+    padding: 5%; 
+       
 }
 
 .controles-container > * {
     width: 100%;
+
     }
 
     .add-bottom-padding{
-        padding-bottom: 10px;
+        padding-bottom: 5px;
     }
     /* radio group */
 mat-radio-group mat-radio-button{
@@ -36,7 +38,9 @@ mat-radio-group mat-radio-button{
 }
 
 .button-row button{
-    margin: 5px;
+    margin:auto;
+    display:grid;
+    justify-content: center;
 }
 
 /* notification */
@@ -98,4 +102,5 @@ mat-footer-row mat-footer-cell{
     min-width: 0px !important;
     height: 40px;
     padding: 0px !important;
+    background: rgb(235, 60, 95);
   }

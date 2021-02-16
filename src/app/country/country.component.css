@@ -5,10 +5,7 @@ table{
     padding: 50px;
 }
 
-.addingButton{
-    margin-left: 670px;
-    
-}
+
 
 /* filter controls */
 .search-div{
@@ -27,7 +24,10 @@ section {
   .example-label {
     display: table-cell;
     font-size: 14px;
-    margin-left: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    
     min-width: 120px;
   }
   
@@ -52,3 +52,15 @@ section {
     width: 120px;
   }
   
+
+  .action-mat-cell {
+    text-align: center;
+    justify-content: center;
+    /* padding-left: 20px; */
+}
+
+.action-header-cell {
+  text-align: center;
+  justify-content: center;
+  /* padding-left: 20px; */
+}
